@@ -8,8 +8,32 @@
 
 #include <iostream>
 
+class HelloTriangleApplication {
+
+public:
+    void run() {
+        initVulkan();
+        mainLoop();
+        cleanup();
+    }
+
+private:
+    void initVulkan() {
+
+    }
+
+    void mainLoop() {
+
+    }
+
+    void cleanup() {
+
+    }
+
+};
+
 int main() {
-    glfwInit();
+    /*glfwInit();
 
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
     GLFWwindow* window = glfwCreateWindow(800, 600, "Vulkan window", nullptr, nullptr);
@@ -25,7 +49,17 @@ int main() {
 
     glfwDestroyWindow(window);
 
-    glfwTerminate();
+    glfwTerminate();*/
 
-    return 0;
+    HelloTriangleApplication app;
+
+    try {
+        app.run();
+    }
+    catch(const std::exception& e){
+        std::cerr << e.what() << std::endl;
+        return EXIT_FAILURE;
+    }
+
+    return EXIT_SUCCESS;
 }
